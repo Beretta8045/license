@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>License Key Generator</title>
+</head>
+<body>
+    <h1>License Key Generator</h1>
+
+    <form method="POST">
+        <label for="company_name">Company Name:</label>
+        <input type="text" name="company_name" id="company_name" required><br>
+
+        <label for="technical_contact">Technical Contact:</label>
+        <input type="text" name="technical_contact" id="technical_contact" required><br>
+
+        <label for="contact_email">Contact Email:</label>
+        <input type="email" name="contact_email" id="contact_email" required><br>
+
+        <label for="num_users">Number of Users:</label>
+        <input type="number" name="num_users" id="num_users" required><br>
+
+        <button type="submit">Generate License Key</button>
+    </form>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</body>
+</html>
