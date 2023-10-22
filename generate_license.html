@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate License</title>
+</head>
+<body>
+    <h1>Generate License</h1>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        {{ form.company_name.label }} {{ form.company_name() }}<br>
+        {{ form.contact_name.label }} {{ form.contact_name() }}<br>
+        {{ form.contact_email.label }} {{ form.contact_email() }}<br>
+        {{ form.num_users.label }} {{ form.num_users() }}<br>
+        {{ form.generate_license() }}<br>
+    </form>
+    <a href="{{ url_for('home') }}">Back to Dashboard</a>
+</body>
+</html>
